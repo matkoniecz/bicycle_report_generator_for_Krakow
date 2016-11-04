@@ -20,7 +20,29 @@ bicycle_ways = BicycleWayRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
 
 main_generator.start_writing_summary_pages()
 krakow_bicycle_parking.generate_statistics_about_bicycle_parkings
-bicycle_ways.process
+contraflow_exceptions_by_names = [
+#jednokierunkowość powinna zostać:
+"Przegorzalska",
+
+#de facto nie jest jednokierunkowa lub jest dojazdem/wyjazdem z dwupasmówki
+"Aleja Żubrowa",
+"Mieczysława Medweckiego",
+"Prądnicka",
+"Ofiar Dąbia",
+"Plac Braci Dudzińskich",
+"Słotna",
+"Cystersów",
+"Józefa Dietla",
+"Aleja Kasy Oszczędności Miasta Krakowa",
+"Biskupa Jana Prandoty",
+"Rzemieślnicza",
+"Bieżanowska",
+"Wielicka",
+"Franciszka Bujaka",
+"Józefa Marcika",
+"Doktora Judyma"
+]
+bicycle_ways.process(contraflow_exceptions_by_names)
 krakow_crossing.generate_html_files_about_crossings
 main_generator.copy_css()
 main_generator.finish_writing_summary_pages()
