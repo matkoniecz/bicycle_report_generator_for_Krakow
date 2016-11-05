@@ -14,12 +14,9 @@ main_generator.register_linkable_source("http://ibikekrakow.com/")
 main_generator.register_linkable_source("https://twitter.com/oficerKRK")
 main_generator.register_linkable_source("https://www.facebook.com/ZIKiT.Krakow/")
 main_generator.register_linkable_source("http://www.skyscrapercity.com/showthread.php?t=642754")
-krakow_crossing = CrossingReportGenerator.new(lat_min, lat_max, lon_min, lon_max)
-krakow_bicycle_parking = BicycleParkingRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
-bicycle_ways = BicycleWayRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
-
 main_generator.start_writing_summary_pages()
-krakow_bicycle_parking.generate_statistics_about_bicycle_parkings
+
+bicycle_ways = BicycleWayRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
 contraflow_exceptions_by_names = [
 #jednokierunkowość powinna zostać:
 "Przegorzalska",
@@ -43,6 +40,12 @@ contraflow_exceptions_by_names = [
 "Doktora Judyma"
 ]
 bicycle_ways.process(contraflow_exceptions_by_names)
+
+krakow_crossing = CrossingReportGenerator.new(lat_min, lat_max, lon_min, lon_max)
 krakow_crossing.generate_html_files_about_crossings
+
+krakow_bicycle_parking = BicycleParkingRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
+krakow_bicycle_parking.generate_statistics_about_bicycle_parkings
+
 main_generator.copy_css()
 main_generator.finish_writing_summary_pages()
