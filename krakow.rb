@@ -1,6 +1,7 @@
 # encoding: UTF-8
 require_relative '../bicycle_report-gem/lib/bicycle_report.rb'
 
+#Kraków - http://www.openstreetmap.org/relation/2768921
 lat_min = 50.00
 lat_max = 50.12
 lon_min = 19.78
