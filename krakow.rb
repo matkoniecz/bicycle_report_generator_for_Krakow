@@ -18,8 +18,8 @@ main_generator.register_linkable_source("http://www.skyscrapercity.com/showthrea
 main_generator.start_writing_summary_pages()
 
 bicycle_ways = BicycleWayRaportGenerator.new(lat_min, lat_max, lon_min, lon_max)
-contraflow_unwanted_by_names = ["Przegorzalska"] #stroma, kręta i wąska
-contraflow_exceptions_by_names = [
+names_of_streets_where_contraflow_is_unwanted = ["Przegorzalska"] #stroma, kręta i wąska
+names_of_streets_certain_to_not_be_oneway = [
 #de facto nie jest jednokierunkowa lub jest dojazdem/wyjazdem z dwupasmówki
 "Aleja Żubrowa",
 "Mieczysława Medweckiego",
@@ -38,7 +38,7 @@ contraflow_exceptions_by_names = [
 "Józefa Marcika",
 "Doktora Judyma"
 ]
-bicycle_ways.process(contraflow_exceptions_by_names+contraflow_unwanted_by_names, contraflow_unwanted_by_names)
+bicycle_ways.process(names_of_streets_certain_to_not_be_oneway, names_of_streets_where_contraflow_is_unwanted)
 
 krakow_crossing = CrossingReportGenerator.new(lat_min, lat_max, lon_min, lon_max)
 krakow_crossing.generate_html_files_about_crossings
