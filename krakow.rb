@@ -9,7 +9,6 @@ lon_max = 20.21
 main_generator = ReportGenerator.new(lat_min, lat_max, lon_min, lon_max)
 main_generator.set_language(:pl)
 main_generator.register_linkable_source("https://zikit.carto.com")
-main_generator.register_linkable_source("http://www.ankietarowerowa.pl/")
 main_generator.register_linkable_source("https://www.facebook.com/KrakowMiastemRowerow/")
 main_generator.register_linkable_source("http://ibikekrakow.com/")
 main_generator.register_linkable_source("https://twitter.com/oficerKRK")
